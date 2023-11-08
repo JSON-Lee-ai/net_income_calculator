@@ -1,4 +1,4 @@
-# Tax Bracket API
+# Modal served Tax Bracket API
 
 This repository contains a simple API deployed on modal for calculating tax brackets in different countries.
 
