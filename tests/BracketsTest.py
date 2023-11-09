@@ -4,7 +4,7 @@ import sys, os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
 
-from src.brackets import BracketsInterface as bi
+from src.models import BracketsInterface as bi
 
 class TestTaxBrackets(unittest.TestCase):
     def test_all_brackets(self):
