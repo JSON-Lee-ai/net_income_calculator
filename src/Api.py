@@ -2,8 +2,8 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from modal import Stub, web_endpoint
-import brackets.BracketsInterface as bi
-import calculator.TaxCalculator as tc
+import models.BracketsInterface as bi
+import services.TaxCalculator as tc
 
 stub = Stub("net_income_calculator")
 
