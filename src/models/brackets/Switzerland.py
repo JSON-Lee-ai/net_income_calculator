@@ -1,4 +1,9 @@
-class SwitzerlandTaxBrackets:
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from BracketABC import Bracket
+
+class SwitzerlandTaxBrackets(Bracket):
     def __init__(self) -> None:
         self.brackets: list[tuple[float,float,float]] = [
             (0., 14800., 0.),
@@ -13,3 +18,6 @@ class SwitzerlandTaxBrackets:
             (179400., 769600., 0.132),
             (769600., float('inf'), 0.115)
         ]
+
+    def get_brackets(self) -> list[tuple[float,float,float]]:
+        return self.brackets
