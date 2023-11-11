@@ -5,6 +5,7 @@ from BracketABC import Bracket
 
 class SwitzerlandTaxBrackets(Bracket):
     def __init__(self) -> None:
+        super().__init__()
         self.brackets: list[tuple[float,float,float]] = [
             (0., 14800., 0.),
             (14800., 32200., 0.0077),

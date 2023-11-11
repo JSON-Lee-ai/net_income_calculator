@@ -1,11 +1,10 @@
 from abc import ABC, abstractmethod
+from typing import List, Tuple
 
 class Bracket(ABC):
-    @property
-    @abstractmethod
     def __init__(self) -> None:
-        self.brackets: list[tuple[float,float,float]] = []
+        self.brackets: List[Tuple[float,float,float]] = []
 
     @abstractmethod
-    def get_brackets(self) -> list[tuple[float,float,float]]:
+    def get_brackets(self) -> List[Tuple[float,float,float]]:
         pass
