@@ -1,7 +1,8 @@
 import sys, os
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from BracketABC import Bracket
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
+from brackets.BracketABC import Bracket
+from enums.Currency import Currency
 
 class SwitzerlandTaxBrackets(Bracket):
     def __init__(self) -> None:
@@ -19,6 +20,11 @@ class SwitzerlandTaxBrackets(Bracket):
             (179400., 769600., 0.132),
             (769600., float('inf'), 0.115)
         ]
+        self.currency = Currency.CHF
 
-    def get_brackets(self) -> list[tuple[float,float,float]]:
+    def get_brackets(self):
         return self.brackets
+    
+    def get_currency(self):
+        return self.currency.value
+    

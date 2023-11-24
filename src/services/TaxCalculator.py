@@ -1,5 +1,7 @@
+from typing import List, Tuple
+
 class TaxCalculator:
-    def __init__(self, tax_brackets: list[tuple[float, float, float]]) -> None:
+    def __init__(self, tax_brackets: List[Tuple[float, float, float]]) -> None:
         self.tax_brackets = tax_brackets
 
     def calculate_net_income(self, gross_income: float) -> float:
