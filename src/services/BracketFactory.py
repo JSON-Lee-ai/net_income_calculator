@@ -10,7 +10,7 @@ class BracketFactory:
         cls.registry[country] = bracket_class
 
     @classmethod
-    def get_bracket(cls, country: str):
+    def get_bracket(cls, country: str) -> object:
         bracket_class = cls.registry.get(country)
         if bracket_class:
             return bracket_class()
