@@ -1,0 +1,13 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
+from services.BracketFactory import BracketFactory
+from models.brackets import Belgium, Switzerland, France
+
+fn register_brackets():
+    BracketFactory.register("BE", Belgium.BelgiumTaxBrackets)
+    BracketFactory.register("CH", Switzerland.SwitzerlandTaxBrackets)
+    BracketFactory.register("FR", France.FranceTaxBrackets)
+
+fn main():
+    register_brackets()

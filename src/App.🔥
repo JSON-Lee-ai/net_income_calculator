@@ -1,12 +1,12 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
 
-class App:
-    def __init__(self, bracket_factory, tax_calculator_cls):
+struct App:
+    fn __init__(inout self, bracket_factory : , tax_calculator_cls):
         self.bracket_factory = bracket_factory
         self.tax_calculator_cls = tax_calculator_cls
 
-    def getNetIncome(self, gross_income: float, country: str) -> str:
+    fn getNetIncome(self, gross_income: Float16, country: String) -> str:
         try:
             bracketClass = self.bracket_factory.get_bracket(country)
             
@@ -20,7 +20,7 @@ class App:
         
         return str(net_income) + " " + currency
     
-def main():
+fn main():
     import services.BracketFactory as bf
     import services.TaxCalculator as tc
 

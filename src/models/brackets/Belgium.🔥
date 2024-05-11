@@ -1,23 +1,25 @@
 import sys, os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
-from brackets.BracketABC import Bracket
+from brackets.Bracket import Bracket
 from enums.Currency import Currency
+from utils import StaticTuple
 
-class BelgiumTaxBrackets(Bracket):
-    
-    def __init__(self):
-        super().__init__()
+struct BelgiumTaxBrackets(Bracket):
+    var brackets : List[StaticTuple[Float16,Float16,Float16]]
+    var currency : Currency
+
+    fn __init__(inout self):
         self.brackets = [
             (0., 13870., 0.25),
             (13870., 24480., 0.40),
             (24480., 42370., 0.45),
-            (42370., float('inf'), 0.50)
+            (42370., Float16('inf'), 0.50)
         ]
         self.currency = Currency.EUR
 
-    def get_brackets(self):
+    fn get_brackets(self):
         return self.brackets
     
-    def get_currency(self):
+    fn get_currency(self):
         return self.currency.value

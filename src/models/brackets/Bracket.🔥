@@ -1,0 +1,13 @@
+from collections import Set, List
+from utils import StaticTuple
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
+
+from enums.Currency import Currency
+
+trait Bracket(ABC):
+    fn get_brackets(self) -> List[StaticTuple[Float16,Float16,Float16]]:
+        pass
+
+    fn get_currency(self) -> String:
+        pass

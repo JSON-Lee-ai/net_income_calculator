@@ -1,12 +1,13 @@
-from typing import List, Tuple
+from collections import List
+from utils import StaticTuple
 
-class TaxCalculator:
-    def __init__(self, tax_brackets: List[Tuple[float, float, float]]) -> None:
+struct TaxCalculator:
+    fn __init__(inout self, tax_brackets: List[StaticTuple[Float16, Float16, Float16]]) -> None:
         self.tax_brackets = tax_brackets
 
     @staticmethod
-    def calculate_net_income_with_bracket(gross_income: float, tax_brackets: List[Tuple[float, float, float]]) -> float:
-        total_tax = 0.0
+    fn calculate_net_income_with_bracket(gross_income: Float16, tax_brackets: List[StaticTuple[Float16, Float16, Float16]]) -> Float16:
+        total_tax = 0.0 
         remaining_income = gross_income
 
         for bracket in tax_brackets:
@@ -22,5 +23,5 @@ class TaxCalculator:
         net_income = gross_income - total_tax
         return net_income
 
-    def calculate_net_income(self, gross_income: float) -> float:
+    fn calculate_net_income(self, gross_income: Float16) -> Float16:
         return self.calculate_net_income_with_bracket(gross_income, self.tax_brackets)
