@@ -1,9 +1,10 @@
+from python import Python
 import sys, os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
-from enum import Enum
 
-class Currency(Enum):
+
+class Currency(Python.enum.Enum):
     USD = 'USD'
     EUR = 'EUR'
     GBP = 'GBP'
